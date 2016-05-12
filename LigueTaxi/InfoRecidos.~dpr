@@ -1,0 +1,24 @@
+program InfoRecidos;
+
+uses
+  Forms,
+  uPrincipal in 'uPrincipal.pas' {frmPrincipal},
+  uSplash in 'uSplash.pas' {frmSplash},
+  uSobre in 'uSobre.pas' {frmSobre},
+  uRelRecibo in 'uRelRecibo.pas' {frmRelRecibo},
+  uRecibo in 'uRecibo.pas' {frmRecibo},
+  uFuncoes in 'uFuncoes.pas';
+
+{$R *.res}
+
+begin
+     frmSplash := TfrmSplash.create(application);
+     frmSplash.show;
+     frmSplash.update;
+     Application.CreateForm(TfrmPrincipal, frmPrincipal);
+  Application.CreateForm(TfrmRelRecibo, frmRelRecibo);
+  Application.CreateForm(TfrmRecibo, frmRecibo);
+  frmSplash.Hide;
+     frmSplash.Free;
+     Application.Run;
+end.
