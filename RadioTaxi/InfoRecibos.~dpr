@@ -1,0 +1,24 @@
+program InfoRecibos;
+
+uses
+  Forms,
+  uPrincipal in '..\TeleTaxi\uPrincipal.pas' {frmPrincipal},
+  uRecibo in '..\TeleTaxi\uRecibo.pas' {frmRecibo},
+  uFuncoes in '..\TeleTaxi\uFuncoes.pas',
+  uRelRecibo in '..\TeleTaxi\uRelRecibo.pas' {frmRelRecibo},
+  uSobre in '..\TeleTaxi\uSobre.pas' {frmSobre},
+  uSplash in '..\TeleTaxi\uSplash.pas' {frmSplash},
+  uRecibo2 in '..\TeleTaxi\uRecibo2.pas' {frmRecibo2},
+  uRelRecido2 in '..\TeleTaxi\uRelRecido2.pas' {frmRelRecibo2};
+
+{$R *.res}
+
+begin
+     frmSplash := TfrmSplash.create(application);
+     frmSplash.show;
+     frmSplash.update;
+     Application.CreateForm(TfrmPrincipal, frmPrincipal);
+  frmSplash.Hide;
+     frmSplash.Free;
+     Application.Run;
+end.
