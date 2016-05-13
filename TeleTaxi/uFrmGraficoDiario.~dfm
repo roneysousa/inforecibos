@@ -1,0 +1,243 @@
+object frmGraHora: TfrmGraHora
+  Left = 121
+  Top = 100
+  BorderIcons = [biSystemMenu]
+  BorderStyle = bsSingle
+  Caption = 'Gr'#225'fico por Hora'
+  ClientHeight = 427
+  ClientWidth = 561
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'MS Sans Serif'
+  Font.Style = []
+  OldCreateOrder = False
+  Position = poScreenCenter
+  ShowHint = True
+  OnClose = FormClose
+  OnShow = FormShow
+  PixelsPerInch = 96
+  TextHeight = 13
+  object Panel1: TPanel
+    Left = 0
+    Top = 0
+    Width = 561
+    Height = 65
+    Align = alTop
+    TabOrder = 0
+    object Label1: TLabel
+      Left = 16
+      Top = 8
+      Width = 38
+      Height = 13
+      Caption = '&Per'#237'odo'
+    end
+    object Label2: TLabel
+      Left = 144
+      Top = 27
+      Width = 6
+      Height = 13
+      Caption = #224
+    end
+    object edtDTINIC: TDateEdit
+      Left = 16
+      Top = 24
+      Width = 121
+      Height = 21
+      NumGlyphs = 2
+      TabOrder = 0
+      OnExit = edtDTINICExit
+      OnKeyPress = edtDTINICKeyPress
+    end
+    object edtDTFINA: TDateEdit
+      Left = 160
+      Top = 24
+      Width = 121
+      Height = 21
+      NumGlyphs = 2
+      TabOrder = 1
+      OnExit = edtDTFINAExit
+      OnKeyPress = edtDTFINAKeyPress
+    end
+    object btnFiltar: TBitBtn
+      Left = 304
+      Top = 22
+      Width = 75
+      Height = 25
+      Hint = 'Filtrar per'#237'odo'
+      Caption = '&Filtar'
+      TabOrder = 2
+      OnClick = btnFiltarClick
+    end
+  end
+  object Panel2: TPanel
+    Left = 0
+    Top = 65
+    Width = 561
+    Height = 303
+    Align = alClient
+    TabOrder = 1
+    object grdConsultar: TDBGrid
+      Left = 1
+      Top = 1
+      Width = 559
+      Height = 301
+      Align = alClient
+      Ctl3D = False
+      DataSource = dsDados
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -11
+      Font.Name = 'MS Sans Serif'
+      Font.Style = []
+      Options = [dgTitles, dgIndicator, dgColLines, dgRowLines, dgTabs, dgRowSelect, dgConfirmDelete, dgCancelOnExit]
+      ParentCtl3D = False
+      ParentFont = False
+      ReadOnly = True
+      TabOrder = 0
+      TitleFont.Charset = ANSI_CHARSET
+      TitleFont.Color = clWindowText
+      TitleFont.Height = -11
+      TitleFont.Name = 'Verdana'
+      TitleFont.Style = []
+      Columns = <
+        item
+          Alignment = taCenter
+          Expanded = False
+          FieldName = 'Hora_Inicio'
+          Title.Alignment = taCenter
+          Title.Caption = 'Inicio'
+          Title.Font.Charset = ANSI_CHARSET
+          Title.Font.Color = clWindowText
+          Title.Font.Height = -11
+          Title.Font.Name = 'Verdana'
+          Title.Font.Style = [fsBold]
+          Width = 80
+          Visible = True
+        end
+        item
+          Alignment = taCenter
+          Expanded = False
+          FieldName = 'Hora_Final'
+          Title.Alignment = taCenter
+          Title.Caption = 'Fim'
+          Title.Font.Charset = ANSI_CHARSET
+          Title.Font.Color = clWindowText
+          Title.Font.Height = -11
+          Title.Font.Name = 'Verdana'
+          Title.Font.Style = [fsBold]
+          Width = 96
+          Visible = True
+        end
+        item
+          Expanded = False
+          FieldName = 'Quant'
+          Title.Alignment = taRightJustify
+          Title.Caption = 'Quant.'
+          Title.Font.Charset = ANSI_CHARSET
+          Title.Font.Color = clWindowText
+          Title.Font.Height = -11
+          Title.Font.Name = 'Verdana'
+          Title.Font.Style = [fsBold]
+          Width = 80
+          Visible = True
+        end>
+    end
+  end
+  object Panel3: TPanel
+    Left = 0
+    Top = 368
+    Width = 561
+    Height = 59
+    Align = alBottom
+    Color = clNavy
+    TabOrder = 2
+    object btFechar: TBitBtn
+      Left = 477
+      Top = 8
+      Width = 75
+      Height = 25
+      Hint = 'Fechar janela'
+      Caption = '&Fechar'
+      TabOrder = 0
+      OnClick = btFecharClick
+      Glyph.Data = {
+        36030000424D3603000000000000360000002800000010000000100000000100
+        18000000000000030000120B0000120B00000000000000000000FF00FFFF00FF
+        FF00FFFF00FFFF00FFFF00FFFF00FF824B4B4E1E1FFF00FFFF00FFFF00FFFF00
+        FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF824B4B824B4BA64B4BA9
+        4D4D4E1E1FFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF
+        824B4B824B4BB64F50C24F50C54D4EB24D4E4E1E1F824B4B824B4B824B4B824B
+        4B824B4B824B4BFF00FFFF00FFFF00FF824B4BD45859CB5556C95455C95253B7
+        4F524E1E1FFE8B8CFB9A9CF8AAABF7B5B6F7B5B6824B4BFF00FFFF00FFFF00FF
+        824B4BD75C5DD05A5BCF595ACF5758BD53564E1E1F23B54A13C14816BD480CBC
+        41F7B5B6824B4BFF00FFFF00FFFF00FF824B4BDD6364D75F60D55E5FD55C5DC2
+        575A4E1E1F2AB44D1CBF4C1EBC4C13BC45F7B5B6824B4BFF00FFFF00FFFF00FF
+        824B4BE36869DD6566DA6364DE6667C6595B4E1E1F26B14916BC481BBB4910BB
+        43F7B5B6824B4BFF00FFFF00FFFF00FF824B4BEB6D6EE26768E67E7FFAD3D4CC
+        6E704E1E1FA5D89750D16F42C9662DC758F7B5B6824B4BFF00FFFF00FFFF00FF
+        824B4BF27374E96C6DEB8182FCD1D3CF6E704E1E1FFFF2CCFFFFD7FFFFD4E6FC
+        C7F7B5B6824B4BFF00FFFF00FFFF00FF824B4BF87879F07576EE7273F07374D1
+        65664E1E1FFCEFC7FFFFD5FFFFD3FFFFD7F7B5B6824B4BFF00FFFF00FFFF00FF
+        824B4BFE7F80F77A7BF6797AF77779D76B6B4E1E1FFCEFC7FFFFD5FFFFD3FFFF
+        D5F7B5B6824B4BFF00FFFF00FFFF00FF824B4BFF8384FC7F80FB7E7FFE7F80DA
+        6E6F4E1E1FFCEFC7FFFFD5FFFFD3FFFFD5F7B5B6824B4BFF00FFFF00FFFF00FF
+        824B4BFF8889FF8283FF8182FF8283E073744E1E1FFCEFC7FFFFD5FFFFD3FFFF
+        D5F7B5B6824B4BFF00FFFF00FFFF00FF824B4B824B4BE27576FE8182FF8687E5
+        76774E1E1FFAEBC5FCFBD1FCFBCFFCFBD1F7B5B6824B4BFF00FFFF00FFFF00FF
+        FF00FFFF00FF824B4B9C5657CB6C6DCF6E6E4E1E1F824B4B824B4B824B4B824B
+        4B824B4B824B4BFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF824B4B82
+        4B4B4E1E1FFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF}
+    end
+    object btnGrafico: TBitBtn
+      Left = 384
+      Top = 8
+      Width = 75
+      Height = 25
+      Hint = 'Visualizar Gr'#225'fico'
+      Caption = '&Gr'#225'fico'
+      TabOrder = 1
+      OnClick = btnGraficoClick
+      Glyph.Data = {
+        36030000424D3603000000000000360000002800000010000000100000000100
+        18000000000000030000120B0000120B00000000000000000000FF00FFFF00FF
+        FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00
+        FFFF00FFFF00FFFF00FF8936157D32137B31137B31137B31137B31137B31137B
+        31137B31137B31137B31137B31137B31137B31137E33138A3715692A11FFF3E7
+        FFEFE06E6C6AFBE7CFFCE5C96E6C6AFFDEBBFFDEBB6E6C6AFED4A7FBCE9C6E6C
+        6AFCCB97FCCB97783012652810EFE7DD6E6C6A6E6C6A6E6C6A6E6C6A6E6C6A6E
+        6C6A6E6C6A6E6C6A6E6C6A6E6C6A6E6C6A6E6C6A6E6C6A762F126628106E6C6A
+        6E6C6AFFF2E23A55DC00139DFFEAD30A6B0B0D4B0CFFE2C4AD58587D2C2CFFDC
+        B7428EE310478F762F12662810FEF3E76E6C6AFEF3E73754DD0115A0FFEAD309
+        6C0A0D4B0CFFE2C4AD58587D2C2CFFDCB7428EE310478F762F1265280F6E6C6A
+        6E6C6AFEF6EB3754DD0115A0FFEAD30C6D0C0D4B0CFFE2C4F8D8B6F8D8B6FFDC
+        B7428EE310478F762F1265280FFFF7EE6E6C6AFFF7EE3754DD0115A0FFEAD30D
+        6E0D0D4B0CFFE2C4F8D8B6F8D8B6FFDCB7428EE310478F762F126628106E6C6A
+        6E6C6AFFFAF33753DD00139FFFEAD30D6E0D0D4B0CFEE5C7FFE1C0FADDBDFFDC
+        B7FED8B0FED8B0762F1265280FFFFCFA6E6C6AFFFBF7FFFCFAFFF2E2FFEAD30E
+        6D0E0D4B0CFEE7CEFFE2C6FFE0BFFFDCB7FED8B0FED8B0752E116B2D126E6C6A
+        6E6C6AFFFCFAFFFCFAFFF2E2FFEAD3FFEAD3FFEAD3FFEAD3FEE6CBFEE3C4FEDE
+        BCFEDAB5FED8AD7B34169E5123CB9346C68C42C68C41C68C41C68C41C68C41C6
+        8C41C68C41C78E42CC9952CB9347CE9951C1914EBB955CA15222994115CC6414
+        D06514CF6514CF6514CF6514CF6514CF6514CF6514D16818F3A966E07011F3A9
+        669F63393553C7A6420CFF00FF93401A95401B95401B95401B95401B95401B95
+        401B95401B95411B99441D953E159A451C8C3C1A843D24FF00FFFF00FFFF00FF
+        FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00
+        FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF
+        00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF}
+    end
+    object StatusBar1: TStatusBar
+      Left = 1
+      Top = 39
+      Width = 559
+      Height = 19
+      Panels = <>
+    end
+  end
+  object dsDados: TDataSource
+    DataSet = dmDados.cdsDados
+    Left = 473
+    Top = 26
+  end
+end
